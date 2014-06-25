@@ -20,7 +20,7 @@ def lcm_callback(chan, data):
   if not rospy.is_shutdown():
     rospy.loginfo('Read %d from LCM:%s at %s' % (co2_val, lcm_topic, rospy.get_time()))
 
-def ros_publish():
+def talker():
   lc = None
   while lc is None:
       try:
@@ -35,7 +35,7 @@ def ros_publish():
 
   pub = rospy.Publisher('co2', Int16, queue_size=10)
   
-  rospy.init_node('co2_lcm_pub')
+  rospy.init_node('co2_lcm_pub', anonymous=True)
   r = rospy.Rate(2)
 
   while not rospy.is_shutdown():
@@ -46,5 +46,5 @@ def ros_publish():
 
 if __name__ == '__main__':
   try:
-    ros_publish()
+    talker()
   except rospy.ROSInterruptException: pass
