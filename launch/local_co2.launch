@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="co2_lcm" name="reader" type="co2_lcm.py"/>
+</launch>
