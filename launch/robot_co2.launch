@@ -3,18 +3,18 @@
     <node pkg="co2_lcm" name="co2_pub" type="co2_lcm.py"/>
   </group>
   
+  <group ns="robot0">
+    <param name="lcm_robot_id" value="/000"/>
+    <node pkg="co2_lcm" name="co2_pub" type="co2_lcm.py"/>
+  </group>
+
   <group ns="robot1">
     <param name="lcm_robot_id" value="/001"/>
     <node pkg="co2_lcm" name="co2_pub" type="co2_lcm.py"/>
   </group>
-
+  
   <group ns="robot2">
     <param name="lcm_robot_id" value="/002"/>
-    <node pkg="co2_lcm" name="co2_pub" type="co2_lcm.py"/>
-  </group>
-  
-  <group ns="robot3">
-    <param name="lcm_robot_id" value="/003"/>
     <node pkg="co2_lcm" name="co2_pub" type="co2_lcm.py"/>
   </group>
 </launch>
